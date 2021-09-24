@@ -1,0 +1,65 @@
+/*
+*** Gold
+*/
+// {
+//     "workbench.colorCustomizations": {
+//         "titleBar.activeForeground": "#000",
+//         "titleBar.inactiveForeground": "#000000CC",
+//         "titleBar.activeBackground": "#FFC600",
+//         "titleBar.inactiveBackground": "#FFC600CC",
+//     }
+// }/*
+// *** Fuscia
+// */
+// {
+//     "workbench.colorCustomizations": {
+//         "titleBar.activeForeground": "#000",
+//         "titleBar.inactiveForeground": "#000000CC",
+//         "titleBar.activeBackground": "#ff0080",
+//         "titleBar.inactiveBackground": "#ff0080cc",
+//     }
+// }
+/*
+*** Teal
+*/
+// {
+//     "workbench.colorCustomizations": {
+//         "titleBar.activeForeground": "#000",
+//         "titleBar.inactiveForeground": "#000000CC",
+//         "titleBar.activeBackground": "#00eeff",
+//         "titleBar.inactiveBackground": "#07c1ce",
+//     }
+// }
+/*
+*** Green
+*/
+{
+    "workbench.colorCustomizations": {
+        "titleBar.activeForeground": "#000",
+        "titleBar.inactiveForeground": "#000000CC",
+        "titleBar.activeBackground": "#00ff95",
+        "titleBar.inactiveBackground": "#07d57f",
+    }
+}
+/*
+*** Purple
+*/
+// {
+//     "workbench.colorCustomizations": {
+//         "titleBar.activeForeground": "#ffffff",
+//         "titleBar.inactiveForeground": "#c2c0c0cc",
+//         "titleBar.activeBackground": "#a200ff",
+//         "titleBar.inactiveBackground": "#8402cf",
+//     }
+// }
+/*
+*** Blue
+*/
+// {
+//     "workbench.colorCustomizations": {
+//         "titleBar.activeForeground": "#ffffff",
+//         "titleBar.inactiveForeground": "#c2c0c0cc",
+//         "titleBar.activeBackground": "#4c00ff",
+//         "titleBar.inactiveBackground": "#3a03bd",
+//     }
+// }
