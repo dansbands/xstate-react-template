@@ -1,41 +1,22 @@
 import "./styles.css";
 import React from "react";
 import ReactDOM from "react-dom";
-import { createMachine, assign } from "xstate";
+import todoStateMachine from "./todoStateMachine";
 import { useMachine } from "@xstate/react";
-
-const toggleMachine = createMachine({
-  id: "toggle",
-  initial: "inactive",
-  context: {
-    count: 0
-  },
-  states: {
-    inactive: {
-      on: { TOGGLE: "active" }
-    },
-    active: {
-      entry: assign({ count: (ctx) => ctx.count + 1 }),
-      on: { TOGGLE: "inactive" }
-    }
-  }
-});
+import TodoList from "./components/TodoList";
+import StateIndicator from "./components/StateIndicator";
 
 function App() {
-  const [current, send] = useMachine(toggleMachine);
-  const active = current.matches("active");
-  const { count } = current.context;
+  const [current, send] = useMachine(todoStateMachine);
+  const success = current.matches("success");
+  const { todos } = current.context;
 
   return (
     <div className="App">
-      <h1>XState React Template</h1>
-      <h2>Fork this template!</h2>
-      <button onClick={() => send("TOGGLE")}>
-        Click me ({active ? "✅" : "❌"})
-      </button>{" "}
-      <code>
-        Toggled <strong>{count}</strong> times
-      </code>
+      <h1>XState React Sandbox</h1>
+      <button onClick={() => send("SUBMIT")}>Submit</button>{" "}
+      <StateIndicator state={current} />
+      <TodoList success={success} todos={todos} />
     </div>
   );
 }
