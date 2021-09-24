@@ -1,8 +1,8 @@
 const StateIndicator = ({ state }) => {
-  console.log(`StateIndicator`, state.value);
   let text;
   switch (state.value) {
     case "loading":
+    case "fetching":
       text = "Loading...";
       break;
     case "success":
@@ -12,7 +12,7 @@ const StateIndicator = ({ state }) => {
       text = "Error!!!";
       break;
     default:
-      text = "Nothing happening here";
+      text = "Waiting for input";
       break;
   }
 

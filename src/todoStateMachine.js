@@ -5,7 +5,6 @@ const apiUrl = "https://jsonplaceholder.typicode.com/todos";
 function invokeFetchTodos() {
   const data = fetch(apiUrl)
     .then((res) => res.json())
-    .then((json) => json)
     .catch((err) => console.log(`err`, err));
 
   return data;
@@ -20,13 +19,20 @@ const todoStateMachine = createMachine({
   states: {
     idle: {},
     loading: {
+      after: {
+        1000: {
+          target: 'fetching' // gotta be a better way
+        }
+      }
+    },
+    fetching: {
       invoke: {
         id: "fetch-data",
         src: invokeFetchTodos,
         onDone: {
           target: "success",
           actions: assign({
-            todos: (context, event) => event.data,
+            todos: (_context, event) => event.data,
           }),
         },
         onError: "error",

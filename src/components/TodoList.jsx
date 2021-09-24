@@ -2,13 +2,13 @@ const TodoList = ({ todos, success }) => {
   const renderedItems = () => {
     return success ? (
       todos.map((todo) => {
-        return <p>{todo.title}</p>;
+        return <p key={todo.id}>{todo.title}</p>;
       })
     ) : (
-      <p>Something went wrong</p>
+      <p>All tasks completed!!!</p>
     );
   };
-  
+
   return renderedItems();
 };
 
