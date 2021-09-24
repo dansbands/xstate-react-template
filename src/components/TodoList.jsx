@@ -1,11 +1,15 @@
+import TodoCard from "./TodoCard";
+
 const TodoList = ({ todos, success }) => {
+  const completed = { id: 1, title: "All tasks completed!!!" };
+
   const renderedItems = () => {
     return success ? (
       todos.map((todo) => {
-        return <p key={todo.id}>{todo.title}</p>;
+        return <TodoCard key={todo.id} todo={todo} />;
       })
     ) : (
-      <p>All tasks completed!!!</p>
+      <TodoCard todo={completed} />
     );
   };
 
