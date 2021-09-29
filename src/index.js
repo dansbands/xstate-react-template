@@ -1,7 +1,7 @@
 import "./styles.css";
 import React from "react";
 import ReactDOM from "react-dom";
-import todoStateMachine from "./todoStateMachine";
+import todoListStateMachine from "./todoListStateMachine";
 import { useMachine } from "@xstate/react";
 import TodoList from "./components/TodoList";
 import StateIndicator from "./components/StateIndicator";
@@ -19,7 +19,7 @@ import {
 // TODO: Add ability to remove completed or show only completed
 
 function App() {
-  const [current, send] = useMachine(todoStateMachine);
+  const [current, send] = useMachine(todoListStateMachine);
   const success = current.matches("success");
   const { todos } = current.context;
 

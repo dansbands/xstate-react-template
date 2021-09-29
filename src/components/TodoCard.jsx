@@ -1,9 +1,13 @@
 import { Card, Checkbox, Grid } from "@mui/material";
+import { useMachine } from "@xstate/react";
+import todoListStateMachine from "../todoListStateMachine";
 
 const TodoCard = ({ todo }) => {
+  const [current, send] = useMachine(todoListStateMachine);
+
   const isTodo = Object.keys(todo).includes("completed");
-  console.log(`isTodo`, isTodo);
-  const { completed, id, title } = todo;
+  // console.log(`todo`, todo);
+  const { completed, id, title, toggleCompleted } = todo;
 
   const styles = {
     minWidth: 275,
@@ -13,9 +17,11 @@ const TodoCard = ({ todo }) => {
     marginBottom: 1,
   };
 
-  const handleChange = () => {
-    console.log(`handleChange`, completed)
+  const handleChange = event => {
+    console.log(`handleChange`, event.target.checked)
     // TODO: reassign completed = !completed
+    send('TOGGLE')
+    console.log(`current`, current)
   }
 
   return (
